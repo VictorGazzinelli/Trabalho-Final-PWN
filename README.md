@@ -49,7 +49,8 @@ Os trabalhos entregues em container docker irão receber ​**5pts extras.** Nes
     * [x] CRUD Usuário
     * [x] CRUD Lista
     * [x] CRUD Tarefa
-    * [ ] Proteger rotas autenticadas com [Passport.js](http://www.passportjs.org/) utilizando login do Github
+    * [x] Construir e proteger as rotas autenticadas com [Passport.js](http://www.passportjs.org/) utilizando login do Github
+ 
 * [ ] Implementação do front-end 
     * [ ] Adicionar Rota/Pagina de Login
     * [ ] Adicionar Rota/Pagina de Listas
