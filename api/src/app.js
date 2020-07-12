@@ -5,6 +5,8 @@ const createError = require('http-errors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/user');
+const listsRouter = require('./routes/list');
+const tasksRouter = require('./routes/task');
 
 const app = express();
 
@@ -35,6 +37,8 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/lists', listsRouter);
+app.use('/tasks', tasksRouter);
 app.use(pageNotFound);
 app.use(ErrorHandler);
 

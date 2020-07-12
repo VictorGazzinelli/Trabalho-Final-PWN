@@ -47,8 +47,9 @@ Os trabalhos entregues em container docker irão receber ​**5pts extras.** Nes
     * [x] Executar script de migrations
     * [x] Proteger dependencias de ambiente utilizando [Dotenv](https://www.npmjs.com/package/dotenv)
     * [x] CRUD Usuário
-    * [ ] CRUD Lista
-    * [ ] CRUD Tarefa
+    * [x] CRUD Lista
+    * [x] CRUD Tarefa
+    * [ ] Proteger rotas autenticadas com [Passport.js](http://www.passportjs.org/) utilizando login do Github
 * [ ] Implementação do front-end 
     * [ ] Adicionar Rota/Pagina de Login
     * [ ] Adicionar Rota/Pagina de Listas
@@ -59,6 +60,8 @@ Os trabalhos entregues em container docker irão receber ​**5pts extras.** Nes
 * [ ] Exportar os modulos como contaniers usando [Docker](https://www.docker.com/)
 * [ ] Implementar [Typescript](https://www.typescriptlang.org/) para melhor organização e compreensão do projeto
 * [ ] Implementar [Swagger](https://swagger.io/) para melhor documentacao da API.
+* [ ] Implementar validação das requests recebidas pela API.
+* [ ] Implementar testes.
 * [ ] Adotar design patterns!
 
 ## Changelog 🧐
