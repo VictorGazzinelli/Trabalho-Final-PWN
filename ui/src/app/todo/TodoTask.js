@@ -24,13 +24,15 @@ export default (props) => {
   return (
     <>
       <Divider />
-      <ListItem>
+      <ListItem className='flex items-center' style={{ background: done ? '#f1f1f1' : '#ffffff' }}>
         <Checkbox
           checked={done}
           onChange={(event) => taskDone(event.target.checked)}
-          color='secondary'
+          color='default'
         />
         <TextField
+          style={{ flexGrow: 1 }}
+          placeholder='Tarefa...'
           value={description}
           onChange={(event) => taskDesc(event.target.value)}
         />

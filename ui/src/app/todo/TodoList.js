@@ -24,10 +24,13 @@ export default (props) => {
 
   return (
     <Card>
-      <List>
-        <ListSubheader>
+      <List style={{ background: '#d2d2d2', padding: 0 }}>
+        <ListSubheader className='flex items-center pb2 pt2'>
           <TextField
+            style={{ flexGrow: 1, background: '#ffffff', borderRadius: '4px' }}
             onChange={(event) => listTitle(event.target.value)}
+            placeholder='Lista...'
+            variant='outlined'
             value={title}
           />
           <Button onClick={() => taskNew()}><Add /> Tarefa</Button>

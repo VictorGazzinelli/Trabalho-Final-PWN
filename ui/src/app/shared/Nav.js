@@ -14,10 +14,10 @@ export default () => {
   };
 
   return (
-    <AppBar position='static' color='secondary'>
-      <Toolbar>
+    <AppBar position='static' style={{ background: '#212121' }}>
+      <Toolbar className='flex justify-between items-center'>
         <Typography variant='h6'>Lista de Tarefas</Typography>
-        <Button variant='contained' color='primary' onClick={() => listNew()}><Add /> Lista</Button>
+        <Button variant='contained' color='default' onClick={() => listNew()}><Add /> Lista</Button>
       </Toolbar>
     </AppBar>
   );
