@@ -1,7 +1,5 @@
 const express = require('express');
-const UserRepository = require('../respositories/UserRepository');
-var passport = require('passport');
-
+const passport = require('passport');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -11,9 +9,8 @@ router.get('/', (req, res) => {
 router.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   (req, res) => {
-    res.redirect('http://localhost:3001/');
+    res.redirect('/');
   }
 );
 
 module.exports = router;
-
