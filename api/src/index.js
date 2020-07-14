@@ -1,11 +1,11 @@
 const dotenv = require('dotenv')
 dotenv.config();
-const app = require ('./app')
-const http = require('http') 
+const app = require('./app')
+const http = require('http')
 
 require('./database/index')
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -30,7 +30,7 @@ function normalizePort(val) {
   return false;
 }
 
-function onError(error){
+function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -59,5 +59,5 @@ function onListening() {
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-    console.log('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
