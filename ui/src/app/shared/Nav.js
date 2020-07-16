@@ -15,7 +15,7 @@ export default () => {
 
   return (
     <AppBar position='static' style={{ background: '#212121' }}>
-      <Toolbar className='flex justify-between items-center'>
+      <Toolbar style={{ maxWidth: '1200px', margin: '0 auto' }} className='flex justify-between items-center w-100'>
         <Typography variant='h6'>Lista de Tarefas</Typography>
         <Button variant='contained' color='default' onClick={() => listNew()}><Add /> Lista</Button>
       </Toolbar>

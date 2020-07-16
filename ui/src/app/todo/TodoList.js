@@ -23,7 +23,7 @@ export default (props) => {
   };
 
   return (
-    <Card>
+    <Card style={{ maxWidth: '1200px', margin: '0 auto' }} className='w-100'>
       <List style={{ background: '#d2d2d2', padding: 0 }}>
         <ListSubheader className='flex items-center pb2 pt2'>
           <TextField
