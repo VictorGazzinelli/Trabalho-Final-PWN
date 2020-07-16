@@ -31,7 +31,7 @@ Os trabalhos entregues em container docker irão receber ​**5pts extras.** Nes
 
 ```sh
     git clone https://github.com/VictorGazzinelli/Trabalho-Final-PWN.git
-    cd Trabalho-Final-PWN && cd api
+    cd Trabalho-Final-PWN 
     npm install
     npm start
 ```
