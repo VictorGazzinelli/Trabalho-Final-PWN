@@ -18,7 +18,7 @@ module.exports = {
   },
 
   async insert(name, email) {
-    const user = User.create({ name, email });
+    const user = await User.create({ name, email });
     return user ? user.dataValues : null;
   },
 
@@ -26,7 +26,7 @@ module.exports = {
     const user = await User.findOne({ where: { id: userId } });
     if(user)
       await user.destroy();
-      return user ? user.dataValues : null;
+    return user ? user.dataValues : null;
   },
 
   async update(user) {

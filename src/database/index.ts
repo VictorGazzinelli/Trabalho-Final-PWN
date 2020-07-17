@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import dbConfig from '../config/database';
+const dbConfig = require('../config/database');
 
 import User from '../models/User'
 import List from '../models/List'

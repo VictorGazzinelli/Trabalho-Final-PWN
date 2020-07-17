@@ -16,7 +16,7 @@ router.get('/callback',
     primaryEmail = req.user.emails.find(email => email.primary === true);
     user = await UserRepository.getByEmail(primaryEmail.value);
     if(!user)
-      user = await UserRepository.insert(req.login, primaryEmail.value)
+      user = await UserRepository.insert(req.user.username, primaryEmail.value)
     lists = await ListRepository.getAllByUserId(user.id);
     res.render('lists', {user, lists});
   });
