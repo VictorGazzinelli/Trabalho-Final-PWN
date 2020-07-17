@@ -1,18 +1,26 @@
 import React from 'react';
+import { IUser, IList } from './interfaces';
 
-const ListPage = (props: any) => {
-// use server data as preloaded state
-  const state = {
-    lists: props.lists,
-  };
+interface IProps {
+  user: IUser
+  lists: Array<IList>
+}
 
-//   const store = createStore(rootReducer, preloadedState);
-
+const ListPage = (props: IProps) => {
   return (
-    <div>
-    {
-      JSON.stringify(props)
-    }
+  <div>
+    <h1>Olá {props.user.name} !</h1>
+    <ul>
+      {
+        props.lists.map( list =>
+           <li key = {list.id}>
+             <a href = {`api/lists/${list.id}`}>
+              {list.name}
+             </a>
+            </li>
+        )
+      }
+    </ul>
   </div>
   );
 };
