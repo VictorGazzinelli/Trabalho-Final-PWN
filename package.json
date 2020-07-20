@@ -21,8 +21,8 @@
   "homepage": "https://github.com/VictorGazzinelli/Trabalho-Final-PWN#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
-    "@react-ssr/core": "latest",
-    "@react-ssr/express": "latest",
+    "@react-ssr/core": "^0.24.0",
+    "@react-ssr/express": "^0.24.0",
     "@types/express": "^4.17.7",
     "@types/http-errors": "^1.8.0",
     "@types/node": "^14.0.23",
