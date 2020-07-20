@@ -1,6 +1,6 @@
 const express = require('express');
-const UserRepository = require('../repositories/UserRepository');
-const ensureAuthentication = require('../utils').ensureAuthentication;
+const UserRepository = require('../../repositories/UserRepository');
+const ensureAuthentication = require('../../utils').ensureAuthentication;
 
 const router = express.Router();
 

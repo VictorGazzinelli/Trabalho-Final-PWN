@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const UserRepository = require('../repositories/UserRepository');
-const ListRepository = require('../repositories/ListRepository');
+const UserRepository = require('../../repositories/UserRepository');
+const ListRepository = require('../../repositories/ListRepository');
 
 /* GET GitHub authentication */
 
@@ -18,7 +18,8 @@ router.get('/callback',
     if(!user)
       user = await UserRepository.insert(req.user.username, primaryEmail.value)
     lists = await ListRepository.getAllByUserId(user.id);
-    res.render('lists', {user, lists});
+    // res.render('lists', {user, lists});
+    res.redirect('/users');
   });
 
 module.exports = router;

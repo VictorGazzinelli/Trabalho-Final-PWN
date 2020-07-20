@@ -8,14 +8,15 @@ const passport = require('passport');
 const pageNotFound = require('./utils').pageNotFound;
 const ErrorHandler = require('./utils').ErrorHandler;
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/user');
-const listsRouter = require('./routes/list');
-const tasksRouter = require('./routes/task');
+const indexRouter = require('./routes/api/index');
+const usersRouter = require('./routes/api/user');
+const usersFrontRouter = require('./routes/ui/user');
+const listsRouter = require('./routes/api/list');
+const tasksRouter = require('./routes/api/task');
 
 //rotas de Login pelo github
-const logoutRouter = require('./routes/logout');
-const githubRouter = require('./routes/github');
+const logoutRouter = require('./routes/auth/logout');
+const githubRouter = require('./routes/auth/github');
 
 const app = express();
 require('./config/github.strategy');
@@ -37,6 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
+app.use('/users', usersFrontRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/lists', listsRouter);
 app.use('/api/tasks', tasksRouter);
