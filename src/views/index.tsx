@@ -22,7 +22,7 @@ const IndexPage = (props: any) => {
 
   return (
     <div className="w-100 h-100 flex justify-center items-center">
-    <a href={`http://localhost:3000/auth/github`} className='link'>
+    <a href={`/auth/github`} className='link'>
       <Button variant='contained' size='large'>
         Login via Github
       </Button>
