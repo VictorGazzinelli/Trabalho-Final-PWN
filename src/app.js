@@ -11,6 +11,7 @@ const ErrorHandler = require('./utils').ErrorHandler;
 const indexRouter = require('./routes/api/index');
 const usersRouter = require('./routes/api/user');
 const usersFrontRouter = require('./routes/ui/user');
+const listsFrontRouter = require('./routes/ui/list');
 const listsRouter = require('./routes/api/list');
 const tasksRouter = require('./routes/api/task');
 
@@ -39,6 +40,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersFrontRouter);
+app.use('/lists', usersFrontRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/lists', listsRouter);
 app.use('/api/tasks', tasksRouter);
