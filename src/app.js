@@ -40,7 +40,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersFrontRouter);
-app.use('/lists', usersFrontRouter);
+app.use('/lists', listsFrontRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/lists', listsRouter);
 app.use('/api/tasks', tasksRouter);
