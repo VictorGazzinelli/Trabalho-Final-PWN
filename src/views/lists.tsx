@@ -15,7 +15,7 @@ const ListPage = (props: IProps) => {
       {
         props.lists.map( list =>
            <li key = {list.id}>
-             <a href = {`api/lists/${list.id}`}>
+             <a href = {`lists/${list.id}`}>
               {list.name}
              </a>
             </li>
