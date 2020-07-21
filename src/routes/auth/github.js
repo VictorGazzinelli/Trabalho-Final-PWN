@@ -9,7 +9,7 @@ const ListRepository = require('../../repositories/ListRepository');
 router.get('/', passport.authenticate('github'));
 
 router.get('/callback',
-  passport.authenticate('github'),
+  passport.authenticate('github', {failureRedirect: '/'}),
   async function (req, res) {
     // Pega informações do Objeto Usuario e retorna para quem fez o Login junto das listas do usuario
     let user, primaryEmail, lists;

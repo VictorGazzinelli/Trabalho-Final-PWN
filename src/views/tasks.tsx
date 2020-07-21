@@ -15,6 +15,8 @@ const TaskPage = (props: IProps) => {
         props.tasks.map( task =>
            <li key = {task.id}>
              {task.name}
+             {task.isDone && <span> Feito </span>}
+             {!task.isDone && <span> Não Feito </span>}
             </li>
         )
       }
