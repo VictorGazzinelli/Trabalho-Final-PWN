@@ -38,11 +38,11 @@ export function onError(error: any) {
 }
 
 export function ensureAuthentication(req : Request, res : Response, next: NextFunction) {
-    return next();
-    // if (req.isAuthenticated()) {
-    //   return next();
-    // }
-    // res.redirect('/login');
+  //@ts-ignore
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.redirect('/');
 }
 
 export function ErrorHandler (err: any, req: Request, res: Response, next : NextFunction) {
