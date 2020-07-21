@@ -4,7 +4,7 @@ const ensureAuthentication = require('../../utils').ensureAuthentication;
 const router = express.Router();
 
 router.get('/', ensureAuthentication, async (req, res) => {
-    res.render('lists' , {user: req.user});
+    res.render('lists' , {});
 });
 
 module.exports = router;

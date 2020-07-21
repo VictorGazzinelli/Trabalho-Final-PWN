@@ -9,7 +9,8 @@ interface IProps {
 const ListPage = (props: IProps) => {
   return (
   <div>
-    <h1>Olá {props.user.name} !</h1>
+    <h1>Hello World!</h1>
+    {/* <h1>Olá {props.user.name} !</h1>
     <ul>
       {
         props.lists.map( list =>
@@ -20,7 +21,7 @@ const ListPage = (props: IProps) => {
             </li>
         )
       }
-    </ul>
+    </ul> */}
   </div>
   );
 };
