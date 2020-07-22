@@ -36,13 +36,13 @@ const listDel = async (id: number) => {
 export default (props: IProps) =>
   <>
     <nav> {props.user.name} </nav>
-    <button onClick={() => listNew(props.user.id)}> criar lista </button>
+    <button onClick={async () => await listNew(props.user.id)}> criar lista </button>
     {props.lists.map((list: IList) =>
       <div key={list.id}>
         <a href={`lists/${list.id}`}>
           <span className="white-90"> {list.name} </span>
         </a>
-        <button onClick={() => listDel(list.id)}> deletar lista </button>
+        <button onClick={async () => await listDel(list.id)}> deletar lista </button>
       </div>
     )}
   </>

@@ -64,16 +64,16 @@ const taskDel = async (id: number) => {
 export default (props: IProps) =>
   <>
     <nav><input type="text" value={props.list.name}
-      onBlur={(event) => listPut(props.list.id, event.target.value)} /></nav>
-    <button onClick={() => taskNew(props.list.id)}> criar tarefa </button>
+      onBlur={async (event) => await listPut(props.list.id, event.target.value)} /></nav>
+    <button onClick={async () => await taskNew(props.list.id)}> criar tarefa </button>
     <ul>
       {props.tasks.map((task: ITask) =>
         <li key={task.id}>
           <input type="text" value={task.name}
-            onBlur={(event) => taskPut(props.list.id, event.target.value, task.isDone)} />
+            onBlur={async (event) => await taskPut(props.list.id, event.target.value, task.isDone)} />
           <input type="checkbox" checked={task.isDone}
-            onChange={(event) => taskPut(props.list.id, task.name, event.target.checked)} />
-          <button onClick={() => taskDel(task.id)}> deletar tarefa </button>
+            onChange={async (event) => await taskPut(props.list.id, task.name, event.target.checked)} />
+          <button onClick={async () => await taskDel(task.id)}> deletar tarefa </button>
         </li>
       )}
     </ul>
