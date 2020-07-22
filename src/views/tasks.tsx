@@ -63,27 +63,17 @@ const taskDel = async (id: number) => {
 
 export default (props: IProps) =>
   <>
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="input-group input-group-sm mb-3">
-        <div className="input-group-prepend">
-          <span className="input-group-text" id="inputGroup-sizing-sm"> Título: </span>
-        </div>
-        <input onBlur={(event) => listPut(props.list.id, event.target.value)} type="text" className="form-control" value={props.list.name} />
-      </div>
-    </nav>
-    <button type="button" className="btn btn-light" onClick={() => taskNew(props.list.id)}> Criar nova lista </button>
-    <ul className="list-group">
+    <nav><input type="text" value={props.list.name}
+      onBlur={(event) => listPut(props.list.id, event.target.value)} /></nav>
+    <button onClick={() => taskNew(props.list.id)}> criar tarefa </button>
+    <ul>
       {props.tasks.map((task: ITask) =>
-        <li className="list-group-item" key={task.id}>
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <div className="input-group-text">
-                <input onBlur={(event) => taskPut(props.list.id, event.target.value, task.isDone)} type="checkbox" value={task.name} />
-              </div>
-            </div>
-            <input onChange={(event) => taskPut(props.list.id, task.name, event.target.checked)} type="text" className="form-control" checked={task.isDone} />
-          </div>
-          <button type="button" className="btn btn-light" onClick={() => taskDel(task.id)}> Criar nova lista </button>
+        <li key={task.id}>
+          <input type="text" value={task.name}
+            onBlur={(event) => taskPut(props.list.id, event.target.value, task.isDone)} />
+          <input type="checkbox" checked={task.isDone}
+            onChange={(event) => taskPut(props.list.id, task.name, event.target.checked)} />
+          <button onClick={() => taskDel(task.id)}> deletar tarefa </button>
         </li>
       )}
     </ul>

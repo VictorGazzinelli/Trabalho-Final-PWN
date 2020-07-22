@@ -35,14 +35,14 @@ const listDel = async (id: number) => {
 
 export default (props: IProps) =>
   <>
-    <nav className="navbar navbar-dark bg-dark"> {props.user.name} </nav>
-    <button type="button" className="btn btn-light" onClick={() => listNew(props.user.id)}> Criar nova lista </button>
+    <nav> {props.user.name} </nav>
+    <button onClick={() => listNew(props.user.id)}> criar lista </button>
     {props.lists.map((list: IList) =>
-      <a href={`lists/${list.id}`}>
-        <div className="card" key={list.id}>
-          <span> {list.name} </span>
-          <button onClick={() => listDel(list.id)}> Deletar </button>
-        </div>
-      </a>
+      <div key={list.id}>
+        <a href={`lists/${list.id}`}>
+          <span className="white-90"> {list.name} </span>
+        </a>
+        <button onClick={() => listDel(list.id)}> deletar lista </button>
+      </div>
     )}
   </>
